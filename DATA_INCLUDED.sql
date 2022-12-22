@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.4.1 on Παρ Δεκ 16 11:55:02 2022
+-- File generated with SQLiteStudio v3.4.1 on ΓΓ΅Γ± Γ„Γ¥Γª 16 11:55:02 2022
 --
 -- Text encoding used: System
 --
@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS Author (
   Name VARCHAR(25)  NOT NULL  ,
   Email VARCHAR(25)  NOT NULL    ,
 PRIMARY KEY(AID));
-INSERT INTO Author (AID, Surname, Name, Email) VALUES (1, 'Πέτρου', 'Μαρία', 'pmaria@example.com');
+INSERT INTO Author (AID, Surname, Name, Email) VALUES (1, 'ΓΓΓ΄Γ±Γ―Γµ', 'ΓΓ΅Γ±ΓΓ΅', 'pmaria@example.com');
 INSERT INTO Author (AID, Surname, Name, Email) VALUES (2, 'Jonan', 'Soe', 'soe@example.com');
-INSERT INTO Author (AID, Surname, Name, Email) VALUES (3, 'Παπαπαύλου', 'Μιχαήλ', 'mpap@example.com');
+INSERT INTO Author (AID, Surname, Name, Email) VALUES (3, 'ΓΓ΅Γ°Γ΅Γ°Γ΅Γ½Γ«Γ―Γµ', 'ΓΓ©Γ·Γ΅ΓΓ«', 'mpap@example.com');
 INSERT INTO Author (AID, Surname, Name, Email) VALUES (4, 'Perkins', 'John', 'perk@example.com');
 
 -- Table: AUTHORED_BY
@@ -57,11 +57,11 @@ PRIMARY KEY(BID)    ,
     REFERENCES Publisher(PID)
       ON DELETE NO ACTION
       ON UPDATE CASCADE);
-INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (1, 'Προγραμματισμός με Μοντέλα ML', '978-3-11-178360-6
+INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (1, 'ΓΓ±Γ―Γ£Γ±Γ΅Γ¬Γ¬Γ΅Γ΄Γ©Γ³Γ¬ΓΌΓ² Γ¬Γ¥ ΓΓ―Γ­Γ΄ΓΓ«Γ΅ ML', '978-3-11-178360-6
 ', 13.25, 3, 3, 1);
-INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (2, 'Εισαγωγή στις Βάσεις Δεδομένων', '979-3-76-743410-0
+INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (2, 'Γ…Γ©Γ³Γ΅Γ£ΓΉΓ£Γ Γ³Γ΄Γ©Γ² Γ‚ΓΓ³Γ¥Γ©Γ² Γ„Γ¥Γ¤Γ―Γ¬ΓΓ­ΓΉΓ­', '979-3-76-743410-0
 ', 31.17, 23, 1, 1);
-INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (3, 'Εισαγωγή στο AI', '978-3-96-148410-5', 53.8, 85, 2, 2);
+INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (3, 'Γ…Γ©Γ³Γ΅Γ£ΓΉΓ£Γ Γ³Γ΄Γ― AI', '978-3-96-148410-5', 53.8, 85, 2, 2);
 INSERT INTO Book (BID, Title, ISBN, Price, Quantity, PID, SID) VALUES (4, 'Programming techniques in Java', '978-3-16-148410-0', 25.3, 18, 1, 2);
 
 -- Table: C_Phone
@@ -83,6 +83,7 @@ INSERT INTO C_Phone (CID, Phone) VALUES (2, 2310123456);
 CREATE TABLE IF NOT EXISTS CONTAINED_IN (
   BID INTEGER  NOT NULL  ,
   SCID INTEGER  NOT NULL  ,
+  Quantity  INTEGER DEFAULT 1 ,
   Discount FLOAT   DEFAULT 0   ,
 PRIMARY KEY(BID, SCID)    ,
   FOREIGN KEY(BID)
@@ -106,9 +107,9 @@ CREATE TABLE IF NOT EXISTS Customer (
   Postal_Code INTEGER(5)    ,
   Email VARCHAR(50)      ,
 PRIMARY KEY(CID));
-INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (1, 'Κωνσταντινίδη', 'Ελένη', 'Ιωακείμ', 'Λάρισα', 'Θεοφίλου', 9, 41612, 'konelen@example.com');
-INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (2, 'Ιωάννου', 'Ιωάννης', 'Πέτρος', 'Θεσσαλονίκη', 'Κων. Καραμανλή', 101, 54697, 'ioannoui@example.com');
-INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (3, 'Παπαδόπουλος', 'Δημήτρης', 'Κωνσταντίνος', 'Θεσσαλονίκη', '25ης Μαρτίου', 45, 54836, 'papadim@example.com');
+INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (1, 'ΓΓΉΓ­Γ³Γ΄Γ΅Γ­Γ΄Γ©Γ­ΓΓ¤Γ§', 'Γ…Γ«ΓΓ­Γ§', 'Γ‰ΓΉΓ΅ΓªΓ¥ΓΓ¬', 'Γ‹ΓΓ±Γ©Γ³Γ΅', 'ΓΓ¥Γ―Γ¶ΓΓ«Γ―Γµ', 9, 41612, 'konelen@example.com');
+INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (2, 'Γ‰ΓΉΓΓ­Γ­Γ―Γµ', 'Γ‰ΓΉΓΓ­Γ­Γ§Γ²', 'ΓΓΓ΄Γ±Γ―Γ²', 'ΓΓ¥Γ³Γ³Γ΅Γ«Γ―Γ­ΓΓªΓ§', 'ΓΓΉΓ­. ΓΓ΅Γ±Γ΅Γ¬Γ΅Γ­Γ«Γ', 101, 54697, 'ioannoui@example.com');
+INSERT INTO Customer (CID, Surname, Name, Father_Name, City, Address, Address_No, Postal_Code, Email) VALUES (3, 'ΓΓ΅Γ°Γ΅Γ¤ΓΌΓ°Γ―ΓµΓ«Γ―Γ²', 'Γ„Γ§Γ¬ΓΓ΄Γ±Γ§Γ²', 'ΓΓΉΓ­Γ³Γ΄Γ΅Γ­Γ΄ΓΓ­Γ―Γ²', 'ΓΓ¥Γ³Γ³Γ΅Γ«Γ―Γ­ΓΓªΓ§', '25Γ§Γ² ΓΓ΅Γ±Γ΄ΓΓ―Γµ', 45, 54836, 'papadim@example.com');
 
 -- Table: P_Phone
 CREATE TABLE IF NOT EXISTS P_Phone (
@@ -161,8 +162,8 @@ CREATE TABLE IF NOT EXISTS Storage (
   Postal_Code INTEGER(5)  NOT NULL  ,
   Phone INTEGER(10)  NOT NULL    ,
 PRIMARY KEY(SID));
-INSERT INTO Storage (SID, City, Address, Address_No, Postal_Code, Phone) VALUES (1, 'Καβάλα', 'Αμερικής', 68, 52636, 6910101020);
-INSERT INTO Storage (SID, City, Address, Address_No, Postal_Code, Phone) VALUES (2, 'Θεσσαλονίκη', 'Φιλομίλας', 13, 51235, 2310900009);
+INSERT INTO Storage (SID, City, Address, Address_No, Postal_Code, Phone) VALUES (1, 'ΓΓ΅ΓΆΓΓ«Γ΅', 'ΓΓ¬Γ¥Γ±Γ©ΓªΓΓ²', 68, 52636, 6910101020);
+INSERT INTO Storage (SID, City, Address, Address_No, Postal_Code, Phone) VALUES (2, 'ΓΓ¥Γ³Γ³Γ΅Γ«Γ―Γ­ΓΓªΓ§', 'Γ–Γ©Γ«Γ―Γ¬ΓΓ«Γ΅Γ²', 13, 51235, 2310900009);
 
 -- Index: Book_FKIndex1
 CREATE INDEX IF NOT EXISTS Book_FKIndex1 ON Book (SID);
